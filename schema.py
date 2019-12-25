@@ -51,6 +51,7 @@ class CreatePost(graphene.Mutation):
         content = graphene.String()
 
     def mutate(self, info, title, content):
+        print(info.context.get('is_anonymous'))
         post = Post(title=title, content=content)
         return CreatePost(post=post)
 
@@ -73,7 +74,7 @@ result = schema.execute(
         }
     }
     ''',
-    # variable_values={'limit': 1}
+    context={'is_anonymous': True}
 )
 
 dictResult = dict(result.data.items())
