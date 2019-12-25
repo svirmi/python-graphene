@@ -51,7 +51,8 @@ class CreatePost(graphene.Mutation):
         content = graphene.String()
 
     def mutate(self, info, title, content):
-        print(info.context.get('is_anonymous'))
+        if info.context.get('is_anonymous'):
+            raise Exception('Not authenticated!')
         post = Post(title=title, content=content)
         return CreatePost(post=post)
 
