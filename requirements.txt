@@ -1,1 +1,5 @@
+Django
+graphene-django>=2.0
 graphene>=2.0
+django-graphql-jwt
+django-cors-headers
