@@ -6,3 +6,5 @@
 *.pot
 *.pyc
 __pycache__/
+app/app/__pycache__/*
+app/tracks/__pycache__/*
