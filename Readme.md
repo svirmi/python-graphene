@@ -4,6 +4,8 @@ docker-compose build
 docker-compose up -d
 ```
 
+http://0.0.0.0:5001/graphql/
+
 To run command inside container
 ```bash
 docker-compose run app /bin/sh
