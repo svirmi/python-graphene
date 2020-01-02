@@ -16,3 +16,26 @@ To avoid possible issues with access rights between host machine user and contai
 ```bash
 docker-compose run -u $(id -u ${USER}):$(id -g ${USER}) graphql /bin/bash
 ```
+
+#### Create user mutation example:
+```graphql endpoint
+mutation{
+  createUser(email:"test@mail.de",username:"Telman", password:"secret"){    
+    user{
+      id
+      email
+      dateJoined
+    }
+  }
+}
+```
+
+#### Get token mutation example:
+```graphql endpoint
+mutation{
+tokenAuth(username:"Telman",password:"secret"){
+  token
+}
+}
+```
+
