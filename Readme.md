@@ -16,6 +16,21 @@ To avoid possible issues with access rights between host machine user and contai
 ```bash
 docker-compose run -u $(id -u ${USER}):$(id -g ${USER}) graphql /bin/bash
 ```
+#### CreateTrack mutation example (auth token required to successfully run this mutation):
+```graphql endpoint
+mutation{
+  createTrack(
+    title:"New linked track",
+  	description:"Description of the new track",
+    url:"https://mytrack1243.de",
+  ){
+    track {
+      id
+      title
+    }
+  }
+}
+```
 
 #### Create user mutation example:
 ```graphql endpoint
@@ -30,7 +45,7 @@ mutation{
 }
 ```
 
-#### Get token mutation example:
+#### Get auth token mutation example:
 ```graphql endpoint
 mutation{
 tokenAuth(username:"Telman",password:"secret"){
