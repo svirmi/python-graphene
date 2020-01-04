@@ -21,10 +21,10 @@ docker-compose run -u $(id -u ${USER}):$(id -g ${USER}) graphql /bin/bash
 mutation{
   createTrack(
     title:"New linked track",
-  	description:"Description of the new track",
+    description:"Description of the new track",
     url:"https://mytrack1243.de",
   ){
-    track {
+    track{
       id
       title
     }
