@@ -1,3 +1,4 @@
+### [WIP]
 To spin up a container run command
 ```bash
 docker-compose build
